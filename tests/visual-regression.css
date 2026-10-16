@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  animation-duration: 0s !important;
+  transition-duration: 0s !important;
+  caret-color: transparent !important;
+}
+
+[data-test="inventory-item"],
+[data-test="inventory-item"] * {
+  color: #f8fafc !important;
+  background-color: #1e293b !important;
+  border-color: #475569 !important;
+}
