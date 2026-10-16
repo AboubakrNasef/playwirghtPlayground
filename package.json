@@ -9,7 +9,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "playwright": "^1.59.1"
+    "playwright": "^1.59.1",
+    "playwright-pdf-reporter": "^1.0.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",

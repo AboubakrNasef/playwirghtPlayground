@@ -40,7 +40,7 @@ export const test = base.extend<AuthenticatedPageFixture>({
     await inventoryPage.navigateToInventory(); 
     await use(inventoryPage);
 
-  },{ box: true }]
+  },{ box: false }]
 });
 
 

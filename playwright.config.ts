@@ -22,7 +22,30 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+reporter: [
+    ['list'],
+    [
+      'playwright-pdf-reporter',
+      {
+        outputDir: 'playwright-report/pdf',
+        fileName: 'test-report.pdf',
+        theme: 'dark',
+        includeScreenshots: true,
+        includeHtml: true,
+        historicalDataPath: 'playwright-report/pdf/history.json', // set to '' to disable trends
+        reportType: 'full',
+        trendLabel: 'Release Train',
+        metadata: {
+          title: 'Release Smoke',
+          project: 'Checkout Platform',
+          author: 'QA Guild',
+          build: process.env.BUILD_ID
+        },
+        // Optional: trade detail for speed (no screenshots, no HTML artifact, no history I/O)
+        // fastMode: true
+      }
+    ]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
